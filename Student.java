@@ -5,6 +5,7 @@ interface abc
 		return ("aaa");
 	}
 }
+
 interface def
 {
 	default String ooo()
@@ -15,13 +16,16 @@ interface def
 
 class Student implements abc, def
 {
-  public String ooo()
-  {
-    return def.super.ooo();
-  }
-	public static void main(String... args)
+	public String ooo()
 	{
-    Student a1 = new Student();
+		return (abc.super.ooo());
+	}
+
+
+	public static void main(String ... args)
+	{
+		Student a1 = new Student();
+
 		System.out.print(a1.ooo());
 	}
 }
